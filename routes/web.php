@@ -1,20 +1,15 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, "home"])->name("homepage"); 
 
-Route::get('/articoli', function () {  //inserisci URI /articoli nel browser
-    return view('articles');
-});
+Route::get('/articoli', [PageController::class, "articles"])->name("articles");
 
-Route::get('/contatti', function () {
-    return view('contacts');
-});
+Route::get('/articolo/{id}', [PageController::class, "article"])->name("article");
 
-Route::get('/chi-siamo', function () {
-    $variabile1 = 'Inserisco qui';
-    return view('chi_siamo', ['variabile1' => $variabile1]);
-});
+Route::get('/contatti', [PageController::class, "contacts"])->name("contacts");
+
+Route::get('/chi-sono', [PageController::class, "about_us"])->name("about_us");
