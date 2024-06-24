@@ -1,13 +1,31 @@
 <?php
 
+Route::get('/', function () {
+
+	return view ('Welcome');
+})-> name('welcome'); 
 
 
-Route::get('/', [PageController::class, "home"])->name("homepage"); 
 
-Route::get('/articoli', [PageController::class, "articles"])->name("articles");
+Route::get('/articoli', function () {
 
-Route::get('/articolo/{id}', [PageController::class, "article"])->name("article");
+    $title='articoli';
 
-Route::get('/contatti', [PageController::class, "contacts"])->name("contacts");
+	return view ('articoles', [
+		'title'=>$title,
+	]);
+})-> name('article'); 
 
-Route::get('/chi-sono', [PageController::class, "about_us"])->name("about_us");
+
+
+Route::get('/contatti', function () {
+
+	return view ('contacts');
+})-> name('contacts'); 
+
+
+
+Route::get('/chi-siamo', function () {
+
+	return view ('about_us');
+})-> name('about_us'); 
