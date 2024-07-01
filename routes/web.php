@@ -14,19 +14,34 @@ Route::get('/', function () {
 Route::get('/articoli', function () {
 
 	$articles = [
-		['title' => 'Titolo articolo #1'],
-		['title' => 'Titolo articolo #1'],
-		['title' => 'Titolo articolo #1'],
+		['title' => 'Titolo articolo #1', 'categoria' => 'CATEGORIA: loft', 'description' => 'esempio description 1'],
+		['title' => 'Titolo articolo #2', 'categoria' => 'CATEGORIA: ville al mare', 'description' => 'esempio description 2'],
+		['title' => 'Titolo articolo #3', 'categoria' => 'CATEGORIA: ville in montagna', 'description' => 'esempio description 3'],
 	];
 
 
 	return view ('articles', [
 		'title'=>'Articoli - Presto.it',
 		'titleh1'=>'Articoli',
-		'description'=> 'Qui si inserisce il testo che vogliamo aggiungere'
+		'description'=> 'Qui si inserisce il testo che vogliamo aggiungere',
 		'articles'=> $articles,
 	]);
 })->name('articles'); 
+
+
+Route::get('/articoli/{id}', function ($id){
+    
+	$articles = [
+		['title' => 'Titolo articolo #1', 'categoria' => 'CATEGORIA: loft', 'description' => 'esempio description 1'],
+		['title' => 'Titolo articolo #2', 'categoria' => 'CATEGORIA: ville al mare', 'description' => 'esempio description 2'],
+		['title' => 'Titolo articolo #3', 'categoria' => 'CATEGORIA: ville in montagna', 'description' => 'esempio description 3'],
+	];
+
+	$articles = $articles[$id];
+
+	return view('article',['article'=> $article]);
+   
+})->name('article.show');
 
 
 

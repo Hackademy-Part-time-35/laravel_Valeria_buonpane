@@ -18,8 +18,17 @@
 <h1>{{ $titleh1 }}</h1>
 <p>{{ $description }}</p>
 
-@foreach($articles as $article)
-<li>{{ $article['title'] }}</li>
+@foreach($articles as $index => $article)
+<li>
+  <a href="{{ route('articles.show', $index) }}">{{ $article['title'] }}</a>
+</li>
+<li>
+  <a href="{{ route('articles.show', $index) }}">{{ $article['title'] }}</a>
+</li>
+<li>
+  <a href="{{ route('articles.show', $index) }}">{{ $article['title'] }}</a>
+</li>
 @endforeach
+
 </body>
 </html>
