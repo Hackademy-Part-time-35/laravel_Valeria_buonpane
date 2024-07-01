@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articoli</title>
+  <title>{{ $title }}</title>
 </head>
 <body>
  
@@ -15,6 +15,11 @@
   <a href="{{ route('contacts') }}">Contatti</a>
 </nav>
 
-<h1>Articoli</h1>
+<h1>{{ $titleh1 }}</h1>
+<p>{{ $description }}</p>
+
+@foreach($articles as $article)
+<li>{{ $article['title'] }}</li>
+@endforeach
 </body>
 </html>
