@@ -41,7 +41,7 @@ Route::get('/articoli/{id}', function ($id){
 
 	return view('article',['article'=> $article]);
    
-})->name('article.show');
+})->name('articles.show');
 
 
 
