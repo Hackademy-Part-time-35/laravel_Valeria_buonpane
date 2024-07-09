@@ -5,7 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
-{
+{   
+    public function welcome(){
+    
+        return view('welcome', [
+            'title'=>'Home - Presto.it',
+            'titleh1'=>'Home',
+            'description'=> 'Qui si inserisce il testo che vogliamo aggiungere'
+        ]);
+    }
+
+
     public function articles(){
         $title = 'Articoli';
         
@@ -47,5 +57,26 @@ class PageController extends Controller
            
         };
     }
+
+    public function contacts() {
+
+        return view ('contacts', [
+            'title'=>'Contatti - Presto.it',
+            'titleh1'=>'Contatti',
+            'description'=> 'Qui si inserisce il testo che vogliamo aggiungere'
+        ]);
+    }
+
+    public function aboutUs(){
+        function (){
+
+            return view ('about_us', [
+                'title'=>'Chi siamo - Presto.it',
+                'titleh1'=>'Chi siamo',
+                'description'=> 'Qui si inserisce il testo che vogliamo aggiungere'
+            ]);
+        };
+    }
+
 
 }
