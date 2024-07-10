@@ -7,9 +7,13 @@
 	<title>{{$article ['title']}}</title>
 </head>
 <body>
+	<a href="{{ route('articles')}}">Indietro</a>
+	<!-br per andare a capo ->
+	<br></br> 
+	
+	<span>{{ $article['category']}}</span>
+	
 	<h1>{{ $article['title']}}</h1>
-
-	<h2>{{ $article['categoria']}}</h2>
 
 	<p>{{ $article['description']}}</p>
 
