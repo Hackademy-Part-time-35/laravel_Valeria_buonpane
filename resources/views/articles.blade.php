@@ -23,6 +23,10 @@
 
 {{-- Modo di aggiungere un commento in Blade --}}
 
+<div class="container m-5">
+  <x-layout message="Sconto del 10% per i nuovi iscritti alla newsletter" />
+</div>
+
 <div class="container">
 <div class="row g-3">
   @foreach($articles as $index => $article)
