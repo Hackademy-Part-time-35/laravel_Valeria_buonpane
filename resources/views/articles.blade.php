@@ -5,16 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ asset('Stili/presto.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>{{ $title }}</title>
 </head>
 <body>
  
-<nav>
-<a href="{{ route('welcome') }}">Home</a>
-  <a href="{{ route('articles') }}">Articoli</a>
-  <a href="{{ route('about_us') }}">Chi siamo</a>
-  <a href="{{ route('contacts') }}">Contatti</a>
-</nav>
+<x-navbar />
 
 <h1>{{ $titleh1 }}</h1>
 <p>{{ $description }}</p>
@@ -27,13 +23,22 @@
 
 {{-- Modo di aggiungere un commento in Blade --}}
 
-@foreach($articles as $index => $article)
+<div class="container">
+<div class="row g-3">
+  @foreach($articles as $index => $article)
         @if($article['visible'])
-        <li>
-            <a href="{{ route('articles.show', $index) }}">{{ $article['category'] }} - {{ $article['title'] }}</a>
-        </li>
+        <div class="col lg-3">
+          <x-card 
+            :category="$article['category'] " 
+            :title=" $article['title'] " 
+            :route=" route('articles.show', $index) "
+          />
+        </div>
         @endif
     @endforeach
+  </div>
 
+</div>
+  
 </body>
 </html>
