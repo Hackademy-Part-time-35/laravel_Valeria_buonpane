@@ -23,7 +23,8 @@ class PageController extends Controller
         return view('welcome', [
             'title'=>'Home - Presto.it',
             'titleh1'=>'Home',
-            'description'=> 'Qui si inserisce il testo che vogliamo aggiungere'
+            'description'=> 'Qui si inserisce il testo che vogliamo aggiungere',
+            'message' => 'Sconto del 10% per i nuovi iscritti alla newsletter',
         ]);
     }
 
@@ -40,6 +41,7 @@ class PageController extends Controller
             'description' => 'Qui si inserisce il testo che vogliamo aggiungere',
             'articles' => $this ->articles,
             'titleIsVisible' => $titleIsvibible,
+            'message' => 'Sconto del 10% per i nuovi iscritti alla newsletter',
         ]);
     }
 
