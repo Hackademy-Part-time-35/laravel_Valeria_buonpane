@@ -16,3 +16,6 @@ Route::get('/contatti', [PageController::class, 'contacts' ])->name('contacts');
 
 
 Route::get('/chi-siamo', [PageController::class, 'aboutUs' ] )->name('about_us'); 
+
+
+Route::get('/counter', App\Livewire\Counter::class);
