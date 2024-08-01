@@ -19,3 +19,6 @@ Route::get('/chi-siamo', [PageController::class, 'aboutUs' ] )->name('about_us')
 
 
 Route::get('/counter', App\Livewire\Counter::class);
+
+
+Route::get('/elenco-utenti', [PageController::class, 'searchUsers'])->name('search-users');
