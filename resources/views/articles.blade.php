@@ -31,6 +31,6 @@
   </div>
 
 </div>
-  
+
 
 </x-layout2>
