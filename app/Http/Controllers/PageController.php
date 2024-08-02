@@ -5,9 +5,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {   
-    public function searchUsers(){
-        return view('account.users-list');
-    }
 
     private $articles;
 
